@@ -1,0 +1,15 @@
+{
+  "name": "mongodb-api",
+  "version": "1.0.0",
+  "description": "Template for typescript nodejs mongodb",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc --watch",
+    "dev": "nodemon src/index.ts",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "build": "rimraf build && tsc",
+    "postinstall": "npm run build"
+  },
+  "author": "Neljohn Cerera",
+  "license": "ISC"
+}

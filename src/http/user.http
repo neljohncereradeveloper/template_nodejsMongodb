@@ -1,0 +1,48 @@
+@host = http://localhost:3001/api
+#########
+######### Retrieve all users
+#########
+GET {{host}}/user 
+content-type: application/json
+#########
+######### Search users
+######### query = search & level
+GET {{host}}/user/search?text=&level=
+content-type: application/json
+#########
+######### Retrieve user by id
+######### para = :_id
+GET {{host}}/user/6252824a04ec9feea12dd858
+content-type: application/json
+#########
+######### Retrieve user by fullName
+######### query = fullName
+GET {{host}}/user/findone?fullName=Neljohn R Cerera
+content-type: application/json
+#########
+######### Insert user
+#########
+POST {{host}}/user 
+content-type: application/json
+
+{
+    "fullName": "Neljohn R Cerer",
+    "gender": "Male",
+    "birthDate": "1993-03-21",
+    "address": "Toril Davao City",
+    "accessLevel": "Level 3",
+    "email": "john@gmail.com",
+    "mobileNumber": "09457065593"
+}
+#########
+######### Update user
+######### query = _id
+PUT {{host}}/user?_id=626f15eb3f54593d609f5b10
+content-type: application/json
+
+{
+    "fullName": "Neljohn R Cerera",
+    "gender": "male",
+    "birthDate": "1993-08-20",
+    "address": "Toril Davao City"
+}
